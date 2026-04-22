@@ -1,0 +1,68 @@
+//// [tests/cases/conformance/es2023/intlPluralRulesOptionsES2023.ts] ////
+
+=== intlPluralRulesOptionsES2023.ts ===
+new Intl.PluralRules("en-GB", {
+>Intl.PluralRules : Symbol(Intl.PluralRules, Decl(lib.es2018.intl.d.ts, --, --), Decl(lib.es2018.intl.d.ts, --, --))
+>Intl : Symbol(Intl, Decl(lib.es5.d.ts, --, --), Decl(lib.es2016.intl.d.ts, --, --), Decl(lib.es2017.intl.d.ts, --, --), Decl(lib.es2018.intl.d.ts, --, --), Decl(lib.es2019.intl.d.ts, --, --) ... and 5 more)
+>PluralRules : Symbol(Intl.PluralRules, Decl(lib.es2018.intl.d.ts, --, --), Decl(lib.es2018.intl.d.ts, --, --))
+
+    roundingPriority: "lessPrecision",
+>roundingPriority : Symbol(roundingPriority, Decl(intlPluralRulesOptionsES2023.ts, 0, 31))
+
+    roundingIncrement: 100,
+>roundingIncrement : Symbol(roundingIncrement, Decl(intlPluralRulesOptionsES2023.ts, 1, 38))
+
+    roundingMode: "trunc",
+>roundingMode : Symbol(roundingMode, Decl(intlPluralRulesOptionsES2023.ts, 2, 27))
+
+    trailingZeroDisplay: "stripIfInteger",
+>trailingZeroDisplay : Symbol(trailingZeroDisplay, Decl(intlPluralRulesOptionsES2023.ts, 3, 26))
+
+});
+
+const {
+    roundingPriority,
+>roundingPriority : Symbol(roundingPriority, Decl(intlPluralRulesOptionsES2023.ts, 7, 7))
+
+    roundingIncrement,
+>roundingIncrement : Symbol(roundingIncrement, Decl(intlPluralRulesOptionsES2023.ts, 8, 21))
+
+    roundingMode,
+>roundingMode : Symbol(roundingMode, Decl(intlPluralRulesOptionsES2023.ts, 9, 22))
+
+    trailingZeroDisplay,
+>trailingZeroDisplay : Symbol(trailingZeroDisplay, Decl(intlPluralRulesOptionsES2023.ts, 10, 17))
+
+} = new Intl.PluralRules("en-GB").resolvedOptions();
+>new Intl.PluralRules("en-GB").resolvedOptions : Symbol(Intl.PluralRules.resolvedOptions, Decl(lib.es2018.intl.d.ts, --, --))
+>Intl.PluralRules : Symbol(Intl.PluralRules, Decl(lib.es2018.intl.d.ts, --, --), Decl(lib.es2018.intl.d.ts, --, --))
+>Intl : Symbol(Intl, Decl(lib.es5.d.ts, --, --), Decl(lib.es2016.intl.d.ts, --, --), Decl(lib.es2017.intl.d.ts, --, --), Decl(lib.es2018.intl.d.ts, --, --), Decl(lib.es2019.intl.d.ts, --, --) ... and 5 more)
+>PluralRules : Symbol(Intl.PluralRules, Decl(lib.es2018.intl.d.ts, --, --), Decl(lib.es2018.intl.d.ts, --, --))
+>resolvedOptions : Symbol(Intl.PluralRules.resolvedOptions, Decl(lib.es2018.intl.d.ts, --, --))
+
+const rp: "auto" | "morePrecision" | "lessPrecision" = roundingPriority;
+>rp : Symbol(rp, Decl(intlPluralRulesOptionsES2023.ts, 14, 5))
+>roundingPriority : Symbol(roundingPriority, Decl(intlPluralRulesOptionsES2023.ts, 7, 7))
+
+const ri: 1 | 2 | 5 | 10 | 20 | 25 | 50 | 100 | 200 | 250 | 500 | 1000 | 2000 | 2500 | 5000 = roundingIncrement;
+>ri : Symbol(ri, Decl(intlPluralRulesOptionsES2023.ts, 15, 5))
+>roundingIncrement : Symbol(roundingIncrement, Decl(intlPluralRulesOptionsES2023.ts, 8, 21))
+
+const rm:
+>rm : Symbol(rm, Decl(intlPluralRulesOptionsES2023.ts, 16, 5))
+
+    | "ceil"
+    | "floor"
+    | "expand"
+    | "trunc"
+    | "halfCeil"
+    | "halfFloor"
+    | "halfExpand"
+    | "halfTrunc"
+    | "halfEven" = roundingMode;
+>roundingMode : Symbol(roundingMode, Decl(intlPluralRulesOptionsES2023.ts, 9, 22))
+
+const tzd: "auto" | "stripIfInteger" = trailingZeroDisplay;
+>tzd : Symbol(tzd, Decl(intlPluralRulesOptionsES2023.ts, 26, 5))
+>trailingZeroDisplay : Symbol(trailingZeroDisplay, Decl(intlPluralRulesOptionsES2023.ts, 10, 17))
+

@@ -1,0 +1,112 @@
+//// [tests/cases/conformance/es2023/intlPluralRulesOptionsES2023.ts] ////
+
+=== intlPluralRulesOptionsES2023.ts ===
+new Intl.PluralRules("en-GB", {
+>new Intl.PluralRules("en-GB", {    roundingPriority: "lessPrecision",    roundingIncrement: 100,    roundingMode: "trunc",    trailingZeroDisplay: "stripIfInteger",}) : Intl.PluralRules
+>                                                                                                                                                                       : ^^^^^^^^^^^^^^^^
+>Intl.PluralRules : Intl.PluralRulesConstructor
+>                 : ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>Intl : typeof Intl
+>     : ^^^^^^^^^^^
+>PluralRules : Intl.PluralRulesConstructor
+>            : ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>"en-GB" : "en-GB"
+>        : ^^^^^^^
+>{    roundingPriority: "lessPrecision",    roundingIncrement: 100,    roundingMode: "trunc",    trailingZeroDisplay: "stripIfInteger",} : { roundingPriority: "lessPrecision"; roundingIncrement: 100; roundingMode: "trunc"; trailingZeroDisplay: "stripIfInteger"; }
+>                                                                                                                                        : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    roundingPriority: "lessPrecision",
+>roundingPriority : "lessPrecision"
+>                 : ^^^^^^^^^^^^^^^
+>"lessPrecision" : "lessPrecision"
+>                : ^^^^^^^^^^^^^^^
+
+    roundingIncrement: 100,
+>roundingIncrement : 100
+>                  : ^^^
+>100 : 100
+>    : ^^^
+
+    roundingMode: "trunc",
+>roundingMode : "trunc"
+>             : ^^^^^^^
+>"trunc" : "trunc"
+>        : ^^^^^^^
+
+    trailingZeroDisplay: "stripIfInteger",
+>trailingZeroDisplay : "stripIfInteger"
+>                    : ^^^^^^^^^^^^^^^^
+>"stripIfInteger" : "stripIfInteger"
+>                 : ^^^^^^^^^^^^^^^^
+
+});
+
+const {
+    roundingPriority,
+>roundingPriority : "auto" | "morePrecision" | "lessPrecision"
+>                 : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    roundingIncrement,
+>roundingIncrement : 1 | 2 | 5 | 10 | 20 | 25 | 50 | 100 | 200 | 250 | 500 | 1000 | 2000 | 2500 | 5000
+>                  : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    roundingMode,
+>roundingMode : "ceil" | "floor" | "expand" | "trunc" | "halfCeil" | "halfFloor" | "halfExpand" | "halfTrunc" | "halfEven"
+>             : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    trailingZeroDisplay,
+>trailingZeroDisplay : "auto" | "stripIfInteger"
+>                    : ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+} = new Intl.PluralRules("en-GB").resolvedOptions();
+>new Intl.PluralRules("en-GB").resolvedOptions() : Intl.ResolvedPluralRulesOptions
+>                                                : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>new Intl.PluralRules("en-GB").resolvedOptions : () => Intl.ResolvedPluralRulesOptions
+>                                              : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>new Intl.PluralRules("en-GB") : Intl.PluralRules
+>                              : ^^^^^^^^^^^^^^^^
+>Intl.PluralRules : Intl.PluralRulesConstructor
+>                 : ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>Intl : typeof Intl
+>     : ^^^^^^^^^^^
+>PluralRules : Intl.PluralRulesConstructor
+>            : ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>"en-GB" : "en-GB"
+>        : ^^^^^^^
+>resolvedOptions : () => Intl.ResolvedPluralRulesOptions
+>                : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+const rp: "auto" | "morePrecision" | "lessPrecision" = roundingPriority;
+>rp : "auto" | "morePrecision" | "lessPrecision"
+>   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>roundingPriority : "auto" | "morePrecision" | "lessPrecision"
+>                 : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+const ri: 1 | 2 | 5 | 10 | 20 | 25 | 50 | 100 | 200 | 250 | 500 | 1000 | 2000 | 2500 | 5000 = roundingIncrement;
+>ri : 1 | 2 | 5 | 10 | 20 | 25 | 50 | 100 | 200 | 250 | 500 | 1000 | 2000 | 2500 | 5000
+>   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+>roundingIncrement : 1 | 2 | 5 | 10 | 20 | 25 | 50 | 100 | 200 | 250 | 500 | 1000 | 2000 | 2500 | 5000
+>                  : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+const rm:
+>rm : "ceil" | "floor" | "expand" | "trunc" | "halfCeil" | "halfFloor" | "halfExpand" | "halfTrunc" | "halfEven"
+>   : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+    | "ceil"
+    | "floor"
+    | "expand"
+    | "trunc"
+    | "halfCeil"
+    | "halfFloor"
+    | "halfExpand"
+    | "halfTrunc"
+    | "halfEven" = roundingMode;
+>roundingMode : "ceil" | "floor" | "expand" | "trunc" | "halfCeil" | "halfFloor" | "halfExpand" | "halfTrunc" | "halfEven"
+>             : ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+const tzd: "auto" | "stripIfInteger" = trailingZeroDisplay;
+>tzd : "auto" | "stripIfInteger"
+>    : ^^^^^^^^^^^^^^^^^^^^^^^^^
+>trailingZeroDisplay : "auto" | "stripIfInteger"
+>                    : ^^^^^^^^^^^^^^^^^^^^^^^^^
+
